@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Generated build output (Tailwind CSS)
+output.css
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Arquivos temporais de sistema operativo (Windows/macOS)
+.DS_Store
+Thumbs.db
