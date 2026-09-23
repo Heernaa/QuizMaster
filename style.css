@@ -1,3 +1,55 @@
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label,
+input,
+button {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 32px;
+}
+
+.bubble {
+  background-color: #32063e;
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px;
+  border-color: #00ff11;
+  corner-shape: squircle;
+  border-radius: 24px;
+  max-width: 30dvw;
+  width: 100%;
+  display: block;
+  margin: 36px auto;
+}
+
+input {
+  border-radius: 24px;
+  corner-shape: squircle;
+  text-align: center;
+  border-color: #00960a;
+  border-width: 2px;
+}
+
+.green_bubble {
+  background-color: #006a2a;
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px;
+  border-color: #1eff00;
+  border-width: 2px;
+  corner-shape: squircle;
+  border-radius: 24px;
+  margin: 0px auto;
+  color: white;
+}
+
+.green_bubble:hover {
+  filter: brightness(1.35);
+}
+
 .quiz_header {
   width: 100%;
   height: 20dvh;
@@ -7,20 +59,35 @@
 
 .main_text {
   height: 45dvh;
+  margin: auto;
   padding: 0vh 25vw;
   text-align: center;
   align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0px auto;
 }
 
 .main_name {
-  margin: 0dvh 25dvw 15dvh;
   height: 25dvh;
+  margin: auto;
   text-align: center;
   align-content: center;
+  border-radius: 48px;
+  corner-shape: squircle;
   border-color: #000000;
   border-style: solid;
-  background-color: #00ff11;
-  width: 50dvw;
+  border-color: #00ff11;
+  background-color: #32063e;
+  max-width: 30dvw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
 
 .greenLetter {
@@ -40,6 +107,8 @@ body {
   height: 100%;
   padding: 0px;
   margin: 0px;
+  color: white;
+  background-color: #000000;
 }
 
 h1 {
