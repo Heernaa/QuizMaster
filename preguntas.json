@@ -1,0 +1,9 @@
+{
+    "preguntas": {
+        "1": {
+            "pregunta": "¿Cuál es el nombre del protagonista de The Legend of Zelda: Breath of the Wild?",
+            "res_correcta" : "Link",
+            "res_incorrectas": ["Mario", "Sonic", "Samus"]
+        }
+    }
+}
