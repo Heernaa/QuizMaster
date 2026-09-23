@@ -53,12 +53,101 @@ main {
 
 .pregunta_card {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   min-height: 0;
   max-height: 100%;
+  box-sizing: border-box;
+  padding: clamp(1rem, 2vw, 1.5rem);
   overflow: hidden;
-  border-style: solid;
-  border-color: #00ff11;
+  border: 1px solid #00ff11;
+  border-radius: clamp(1.25rem, 2.5vw, 2rem);
   background-color: #32063e;
-  border-radius: 12px;
+  box-shadow: 0 0 18px rgb(0 255 17 / 20%);
+}
+
+.pregunta_card > div:first-child {
+  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+  color: #00ff11;
+  font-size: clamp(0.875rem, 0.7rem + 0.5vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.pregunta_card > div:nth-child(2) {
+  margin-bottom: clamp(0.75rem, 1.25vw, 1rem);
+  color: white;
+  font-size: clamp(1.25rem, 0.9rem + 0.75vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.pregunta_card ul {
+  display: grid;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pregunta_card li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(2.25rem, 4vw, 3rem);
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1rem)
+    clamp(0.5rem, 1vw, 0.75rem) clamp(2.75rem, 5vw, 3.5rem);
+  border: 1px solid #00ff11;
+  border-radius: clamp(0.625rem, 1.25vw, 1rem);
+  color: white;
+  background-color: rgb(0 0 0 / 22%);
+  font-size: clamp(1rem, 0.75rem + 0.625vw, 1.375rem);
+  line-height: 1.2;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+.pregunta_card li::before {
+  position: absolute;
+  left: clamp(0.5rem, 1vw, 0.75rem);
+  display: grid;
+  width: clamp(1.75rem, 3vw, 2.25rem);
+  height: clamp(1.75rem, 3vw, 2.25rem);
+  place-items: center;
+  border-radius: clamp(0.5rem, 1vw, 0.75rem);
+  color: #00ff11;
+  background-color: #010002;
+  font-size: clamp(1rem, 0.75rem + 0.625vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pregunta_card li:nth-child(1)::before {
+  content: "A";
+}
+
+.pregunta_card li:nth-child(2)::before {
+  content: "B";
+}
+
+.pregunta_card li:nth-child(3)::before {
+  content: "C";
+}
+
+.pregunta_card li:nth-child(4)::before {
+  content: "D";
+}
+
+.pregunta_card li:hover,
+.pregunta_card li.selected {
+  border-color: #00ff11;
+  background-color: #411581;
+  box-shadow: 0 0 10px rgb(0 255 17 / 45%);
 }
