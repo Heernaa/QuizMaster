@@ -4,6 +4,101 @@
             "pregunta": "¿Cuál es el nombre del protagonista de The Legend of Zelda: Breath of the Wild?",
             "res_correcta" : "Link",
             "res_incorrectas": ["Mario", "Sonic", "Samus"]
+        },
+        "2": {
+            "pregunta": "¿Qué empresa japonesa desarrolló la serie de videojuegos Pokémon?",
+            "res_correcta" : "Nintendo",
+            "res_incorrectas": ["Sony", "Sega", "Capcom"]
+        },
+        "3": {
+            "pregunta": "¿Quién es el protagonista de la serie Halo?",
+            "res_correcta" : "Master Chief",
+            "res_incorrectas": ["Geralt de Rivia", "Commander Shepard", "Leon S. Kennedy"]
+        },
+        "4": {
+            "pregunta": "¿Qué protagonista pertenece a la serie God of War?",
+            "res_correcta" : "Kratos",
+            "res_incorrectas": ["Dante", "Ryu", "Jin Sakai"]
+        },
+        "5": {
+            "pregunta": "¿Cómo se llama la protagonista de la serie Tomb Raider?",
+            "res_correcta" : "Lara Croft",
+            "res_incorrectas": ["Faith Connors", "Aya Brea", "Ellie Williams"]
+        },
+        "6": {
+            "pregunta": "¿Cuál de estos personajes es un Pokémon de tipo eléctrico?",
+            "res_correcta" : "Pikachu",
+            "res_incorrectas": ["Charmander", "Bulbasaur", "Squirtle"]
+        },
+        "7": {
+            "pregunta": "¿Qué objeto puede recoger Mario para obtener una vida adicional en Super Mario Bros.?",
+            "res_correcta" : "Champiñón",
+            "res_incorrectas": ["Moneda", "Estrella", "Bloque"]
+        },
+        "8": {
+            "pregunta": "¿En qué ciudad ficticia tiene lugar la historia de Grand Theft Auto V?",
+            "res_correcta" : "Los Santos",
+            "res_incorrectas": ["Liberty City", "Vice City", "San Andreas"]
+        },
+        "9": {
+            "pregunta": "¿Qué mineral se utiliza para construir mecanismos en Minecraft?",
+            "res_correcta" : "Redstone",
+            "res_incorrectas": ["Diamante", "Oro", "Obsidiana"]
+        },
+        "10": {
+            "pregunta": "¿Cuál es el protagonista de Sekiro: Shadows Die Twice?",
+            "res_correcta" : "Wolf",
+            "res_incorrectas": ["Genichiro", "Kuro", "Hidetaro"]
+        },
+        "11": {
+            "pregunta": "¿Quién es el protagonista de la saga The Witcher?",
+            "res_correcta" : "Geralt de Rivia",
+            "res_incorrectas": ["Alucard", "Talion", "Arthur Morgan"]
+        },
+        "12": {
+            "pregunta": "¿En qué juego los jugadores investigan un impostor en una nave espacial?",
+            "res_correcta" : "Among Us",
+            "res_incorrectas": ["Overwatch", "Team Fortress 2", "Apex Legends"]
+        },
+        "13": {
+            "pregunta": "¿Cómo se llama el personaje que come puntos en el juego Pac-Man?",
+            "res_correcta" : "Pac-Man",
+            "res_incorrectas": ["Mario", "Dig Dug", "Q*bert"]
+        },
+        "14": {
+            "pregunta": "¿Qué jefe final se enfrenta al protagonista en el mundo inicial de Dark Souls?",
+            "res_correcta" : "Lordvessel",
+            "res_incorrectas": ["Gwyndolin", "Seath the Scaleless", "Nameless King"]
+        },
+        "15": {
+            "pregunta": "¿En qué juego de batalla campal los jugadores construyen estructuras y sobreviven a una tormenta?",
+            "res_correcta" : "Fortnite",
+            "res_incorrectas": ["Mario Kart", "Animal Crossing", "Kirby"]
+        },
+        "16": {
+            "pregunta": "¿Qué personaje se controla inicialmente en Red Dead Redemption 2?",
+            "res_correcta" : "Arthur Morgan",
+            "res_incorrectas": ["John Marston", "Dutch van der Linde", "Hosea Matthews"]
+        },
+        "17": {
+            "pregunta": "¿Qué símbolo sagrado aparece en la mayoría de los juegos de The Legend of Zelda?",
+            "res_correcta" : "Triforce",
+            "res_incorrectas": ["Chaos Emeralds", "Star Bit", "Power Coin"]
+        },
+        "18": {
+            "pregunta": "¿Quién es el protagonista de la serie Half-Life?",
+            "res_correcta" : "Gordon Freeman",
+            "res_incorrectas": ["Adrian Shephard", "Barney Calhoun", "John Carmack"]
+        },
+        "19": {
+            "pregunta": "¿Qué personaje es el propietario de la tienda Nook's Cranny en Animal Crossing?",
+            "res_correcta" : "Tom Nook",
+            "res_incorrectas": ["Isabelle", "K.K. Slider", "Cyrus"]
+        },
+        "20": {
+            "pregunta": "¿En qué ciudad futurista transcurre Cyberpunk 2077?",
+            "res_correcta" : "Night City",
+            "res_incorrectas": ["Neo Angeles", "New California", "Detroit"]
         }
     }
 }
