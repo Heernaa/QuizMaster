@@ -25,6 +25,8 @@ const quiz = document.querySelector("#quiz");
 if (quiz) startQuiz();
 
 async function startQuiz() {
+  let loaded = false;
+  const loadingMessage = document.querySelector("#loading-message");
   const roundNumber = document.querySelector("#round-number");
   const resultDialog = document.querySelector("#result-dialog");
   const resultTitle = document.querySelector("#result-title");
@@ -32,6 +34,8 @@ async function startQuiz() {
   const resultAction = document.querySelector("#result-action");
   let questions;
   let round = 1;
+  let score = 0;
+  const usedQuestions = new Set();
 
   try {
     const response = await fetch("../preguntas.json");
@@ -39,6 +43,8 @@ async function startQuiz() {
     const data = await response.json();
     questions = Object.values(data.preguntas);
     if (questions.length < 4) throw new Error("Se necesitan al menos cuatro preguntas.");
+    loaded = true;
+    if (loaded) loadingMessage?.remove();
   } catch (error) {
     quiz.textContent = "No se pudieron cargar las preguntas. Abre el juego desde un servidor web local.";
     return;
@@ -55,8 +61,8 @@ async function startQuiz() {
 
   function renderRound() {
     roundNumber.textContent = String(round);
-    const roundQuestions = shuffle(questions).slice(0, 2);
-    quiz.replaceChildren();
+    const roundQuestions = shuffle(questions.filter((question) => !usedQuestions.has(question))).slice(0, 2);
+    roundQuestions.forEach((question) => usedQuestions.add(question));
     const form = document.createElement("form");
     form.className = "round-form";
 
@@ -64,7 +70,7 @@ async function startQuiz() {
       const card = document.createElement("section");
       card.className = "pregunta_card";
       const heading = document.createElement("div");
-      heading.textContent = `Pregunta ${questionIndex + 1}`;
+      heading.textContent = `Ronda ${round} · Pregunta ${questionIndex + 1}`;
       const prompt = document.createElement("div");
       prompt.textContent = question.pregunta;
       const answers = document.createElement("div");
@@ -100,7 +106,11 @@ async function startQuiz() {
       const correctCount = roundQuestions.reduce((count, _, index) => {
         return count + (form.querySelector(`input[name="question-${index}"]:checked`)?.value === "true" ? 1 : 0);
       }, 0);
+      score += correctCount;
       if (correctCount === 2 && round === 1) {
+        form.querySelectorAll("input").forEach((input) => { input.disabled = true; });
+        form.classList.add("completed-round");
+        submit.remove();
         resultTitle.textContent = "¡Ronda superada!";
         resultMessage.textContent = "¡Has acertado las dos! Prepárate para otras dos preguntas.";
         resultAction.textContent = "Continuar";
@@ -110,13 +120,13 @@ async function startQuiz() {
           renderRound();
         };
       } else if (correctCount === 2) {
-        resultTitle.textContent = "¡Prueba superada!";
-        resultMessage.textContent = "¡Has acertado las cuatro preguntas!";
+        resultTitle.textContent = `¡Felicidades, ${sessionStorage.getItem(NICKNAME_KEY) || "Invitado"}!`;
+        resultMessage.textContent = `¡Has superado el quiz con ${score} de 4 respuestas correctas!`;
         resultAction.textContent = "Jugar de nuevo";
         resultAction.onclick = () => window.location.reload();
       } else {
         resultTitle.textContent = "¡Derrota!";
-        resultMessage.textContent = "Necesitas acertar las dos preguntas de cada ronda.";
+        resultMessage.textContent = `Has conseguido ${score} de 4 respuestas correctas. Necesitas acertar las dos preguntas de cada ronda.`;
         resultAction.textContent = "Intentar de nuevo";
         resultAction.onclick = () => window.location.reload();
       }
