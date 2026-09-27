@@ -1,39 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>QuizMaster</title>
     <link rel="stylesheet" href="../css/game.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <nav>
       <div><span class="verde">Q</span>uiz<span class="verde">Master</span></div>
       <div class="nav-player-round">
         <div>Jugador: <span class="verde" id="player-name"></span></div>
-        <div>Patata <span class="verde">X</span> de <span class="verde">X</span></div>
+        <div>Ronda <span class="verde" id="round-number">1</span> de 2</div>
       </div>
     </nav>
-    <main>
-        <div class="pregunta_card">
-            <div>Pregunta 1</div>
-            <div>¿Cuantos litros de agua bebe una persona de media la dia?</div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="pregunta_card"></div>
+    <main id="quiz" aria-live="polite">
+      <p id="loading-message">Cargando preguntas…</p>
     </main>
+    <dialog id="result-dialog" aria-labelledby="result-title">
+      <h2 id="result-title"></h2>
+      <p id="result-message"></p>
+      <button class="green_bubble" id="result-action" type="button"></button>
+    </dialog>
+    <script src="../js/script.js"></script>
   </body>
-  <script src="../js/script.js"></script>
 </html>
